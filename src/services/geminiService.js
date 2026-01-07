@@ -3,7 +3,7 @@
 
 
 
-const API_KEY = process.env.REACT_APP_API_KEY;
+const API_KEY = import.meta.env.VITE_OPENROUTER_KEY;
 const BASE_URL =  "https://openrouter.ai/api/v1";
 const MODEL = "mistralai/mistral-7b-instruct:free";
 
