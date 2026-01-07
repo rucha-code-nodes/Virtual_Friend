@@ -1,0 +1,130 @@
+/* src/components/Journal.css */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Patrick+Hand&display=swap');
+
+.journal-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* Allows the paper to pop against the dark blue app background */
+}
+
+/* The Realistic Paper Sheet */
+.paper-sheet {
+  width: 100%;
+  max-width: 700px;
+  height: 80vh;
+  background-color: #FDFBF7; /* Cream/Off-white paper color */
+  
+  /* THIS CREATES THE LINES USING CSS */
+  background-image: 
+    linear-gradient(#E8E4D9 1px, transparent 1px);
+  background-size: 100% 40px; /* Line height = 40px */
+  
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding: 0 40px 40px 40px;
+  position: relative;
+  
+  /* Slight rotation for natural feel */
+  transform: rotate(-1deg);
+  transition: transform 0.3s ease;
+}
+
+.paper-sheet:hover {
+  transform: rotate(0deg) scale(1.01);
+}
+
+/* The "Tape" holding the paper */
+.tape-strip {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 120px;
+  height: 35px;
+  background-color: rgba(235, 226, 207, 0.8); /* Semi-transparent masking tape */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  opacity: 0.9;
+  z-index: 10;
+  backdrop-filter: blur(2px);
+}
+
+/* Header/Date Section */
+.journal-header {
+  margin-top: 50px; /* Push down below tape */
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 2px solid #E65A5A; /* Red margin line like real notebook */
+  padding-bottom: 10px;
+}
+
+.date-stamp {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.5rem;
+  color: #888;
+}
+
+/* The actual typing area */
+.journal-textarea {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  
+  /* Typography to match lines */
+  font-family: 'Indie Flower', cursive; /* Handwriting font */
+  font-size: 1.6rem; 
+  line-height: 40px; /* MUST MATCH background-size above */
+  color: #2D3142;
+  margin-top: 1px; /* Tweak to align text on lines */
+}
+
+/* Custom Scrollbar for the paper */
+.journal-textarea::-webkit-scrollbar { width: 8px; }
+.journal-textarea::-webkit-scrollbar-thumb { background: #E8E4D9; border-radius: 4px; }
+
+/* The "Sticker" Save Button */
+.sticker-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #FFD8C9; /* Peach sticker */
+  color: #2D3142;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.2rem;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 2px 20px 5px 20px; /* Organic shape */
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transform: rotate(-3deg);
+  transition: 0.3s;
+}
+
+.sticker-btn:hover {
+  transform: rotate(0deg) scale(1.1);
+  background: #FF9EAA;
+  color: white;
+}
+
+/* Decorative leaf (CSS Shapes) */
+.leaf-decor {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 60px;
+  height: 60px;
+  background: #A3E4DB;
+  border-radius: 0 50% 0 50%;
+  transform: rotate(45deg);
+  opacity: 0.8;
+  z-index: 5;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}

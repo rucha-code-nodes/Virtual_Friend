@@ -1,0 +1,246 @@
+
+
+
+
+/* src/components/MeditateView.css */
+
+/* --- LAYOUTS --- */
+.meditate-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.studio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Category Tabs */
+.category-tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  overflow-x: auto;
+  padding-bottom: 10px; /* Space for scrollbar if needed */
+}
+
+.tab-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #A0A1C5;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.tab-btn.active {
+  background: #FDEE98;
+  color: #1A1B4B;
+  border-color: #FDEE98;
+  font-weight: 600;
+}
+
+/* Grid for Cards */
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  overflow-y: auto;
+  padding-bottom: 40px;
+}
+
+.exercise-card {
+  background: #1A1B4B;
+  padding: 25px;
+  border-radius: 24px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.exercise-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--card-color, white); /* Uses inline variable */
+}
+
+/* --- PLAYER VIEW --- */
+.player-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.instruction-text {
+  color: #A0A1C5;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 50px;
+  line-height: 1.6;
+}
+
+/* --- ANIMATIONS --- */
+
+/* Base Circle */
+.breathing-circle {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.inner-core {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
+}
+
+/* Breathing Animations */
+.breathe-deep { animation: breathe 8s infinite ease-in-out; }
+.breathe-box { animation: breatheBox 16s infinite ease-in-out; }
+.breathe-sleep { animation: breatheSleep 19s infinite ease-in-out; }
+
+/* Movement/Sensory Pulse (Gentle heartbeat) */
+.pulse-gentle { animation: gentlePulse 3s infinite ease-in-out; }
+
+/* Keyframes */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.4); opacity: 1; }
+}
+
+@keyframes breatheBox {
+  0% { transform: scale(1); opacity: 0.6; }
+  25% { transform: scale(1.4); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 1; }
+  75% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 0.6; }
+}
+
+@keyframes breatheSleep {
+  0% { transform: scale(1); opacity: 0.6; }
+  20% { transform: scale(1.4); opacity: 1; }
+  55% { transform: scale(1.4); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.6; }
+}
+
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* src/components/MeditateView.css */
+
+/* --- SHARED & STRUCTURE --- */
+.meditate-container, .player-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.studio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.exit-btn {
+  background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #A0A1C5;
+  padding: 8px 20px; border-radius: 20px; cursor: pointer; transition: 0.3s;
+}
+.exit-btn:hover { border-color: white; color: white; }
+
+/* --- MENU VIEW --- */
+.category-tabs {
+  display: flex; gap: 12px; margin-bottom: 30px; overflow-x: auto; padding-bottom: 5px;
+}
+.tab-btn {
+  background: rgba(255, 255, 255, 0.05); color: #A0A1C5; border: none;
+  padding: 10px 24px; border-radius: 30px; cursor: pointer; transition: 0.3s; font-weight: 500;
+}
+.tab-btn.active { background: #FDEE98; color: #1A1B4B; font-weight: 600; }
+
+.exercise-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px; overflow-y: auto; padding-right: 5px;
+}
+.exercise-card {
+  background: rgba(255, 255, 255, 0.03); border-radius: 24px; padding: 25px;
+  cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent;
+  display: flex; flexDirection: column;
+}
+.exercise-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--card-accent);
+  transform: translateY(-5px);
+}
+.card-icon-wrapper {
+  width: 45px; height: 45px; border-radius: 50%; display: flex;
+  align-items: center; justify-content: center; fontSize: 1.4rem; margin-bottom: 15px;
+}
+.card-title { font-size: 1.2rem; margin: 0 0 8px 0; }
+.card-desc { color: #A0A1C5; font-size: 0.9rem; line-height: 1.4; flex-grow: 1; }
+.card-duration { font-size: 0.85rem; font-weight: 600; margin-top: 15px; }
+
+/* --- PLAYER VIEW --- */
+.player-container { align-items: center; text-align: center; }
+.player-header { width: 100%; display: flex; margin-bottom: 20px; }
+.back-icon-btn { background: none; border: none; color: #A0A1C5; font-size: 1rem; cursor: pointer; }
+
+.instruction-text { color: #A0A1C5; font-size: 1.1rem; max-width: 500px; margin-bottom: 30px; line-height: 1.5; }
+
+/* TIMER */
+.timer-display {
+  font-size: 4rem; font-weight: 700; font-variant-numeric: tabular-nums;
+  margin-bottom: 30px; letter-spacing: 2px; text-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+/* CONTROLS */
+.control-buttons { display: flex; gap: 15px; margin-top: auto; }
+.control-btn {
+  padding: 12px 30px; border-radius: 30px; font-size: 1rem; font-weight: 600;
+  cursor: pointer; border: none; transition: 0.2s;
+}
+.start-btn:hover { filter: brightness(1.1); transform: scale(1.05); }
+.pause-btn { background: rgba(255,255,255,0.1); color: white; }
+.stop-btn { background: transparent; border: 2px solid #A0A1C5; color: #A0A1C5; }
+.stop-btn:hover { border-color: white; color: white; }
+.restart-btn { background: rgba(255,255,255,0.1); color: white; }
+
+/* Animations (Keep existing ones from before) */
+.breathing-circle { width: 200px; height: 200px; /* ... rest of your animation css */ }
+/* ... ensure .breathe-deep, .breathe-box, etc. are here ... */
+
+
+

@@ -1,0 +1,85 @@
+/* Dashboard Specifics */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 10px 20px;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* The Big Center Card */
+.friend-stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* Add a soft gradient background to the card itself */
+  background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(240,244,255,0.9) 100%);
+}
+
+.interaction-area {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.status-badge {
+  background: rgba(139, 128, 249, 0.1);
+  color: var(--primary-purple);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.main-mic-btn {
+  background: var(--primary-purple);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(139, 128, 249, 0.4);
+  transition: 0.3s;
+}
+.main-mic-btn:hover { transform: translateY(-3px); }
+.main-mic-btn.active { background: #FF7E67; animation: pulse 1.5s infinite; }
+
+/* Bottom Row Cards */
+.cards-row {
+  display: flex;
+  gap: 20px;
+  height: 100px;
+}
+.mini-card {
+  flex: 1;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 20px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.mini-card span { font-size: 1.8rem; }
+.mini-card:hover { transform: translateY(-5px); }

@@ -1,0 +1,47 @@
+/* src/App.css */
+
+
+
+/* Animation for page switching */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+  height: 100%;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* MEDITATION BREATHING ANIMATION */
+.breathing-circle {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: rgba(196, 245, 238, 0.2); /* Soft Teal Glow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: breathe 8s infinite ease-in-out; /* 4s in, 4s out */
+}
+
+.inner-core {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #C4F5EE 0%, #764BA2 100%);
+  box-shadow: 0 0 50px rgba(196, 245, 238, 0.4);
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.4); opacity: 1; } /* Expands */
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  color: #cdc4c4;
+  margin: 0; /* Optional: keeps spacing clean */
+}
+
