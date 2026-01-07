@@ -4,8 +4,8 @@
 
 
 const API_KEY = process.env.REACT_APP_API_KEY;
-const BASE_URL = "https://openrouter.ai/api/v1";
-const MODEL = "mistralai/devstral-2512:free";
+const BASE_URL =  "https://openrouter.ai/api/v1";
+const MODEL = "mistralai/mistral-7b-instruct:free";
 
 const SYSTEM_INSTRUCTION = `
 You are a warm, loving, and deeply empathetic best friend. Your name is "Soul" (or choose your own name).
